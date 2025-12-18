@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Benifer Ramola C B | Cyber Security Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#050510;
+  --glass:rgba(255,255,255,0.08);
+  --neon:#00f5ff;
+  --neon2:#9b5cff;
+  --text:#e8e8f1;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:radial-gradient(circle at top,#0b0b25,#02020a 70%);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+/* ===== CYBER GRID BACKGROUND ===== */
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background:
+    repeating-linear-gradient(0deg,rgba(255,255,255,.03) 0 1px,transparent 1px 40px),
+    repeating-linear-gradient(90deg,rgba(255,255,255,.03) 0 1px,transparent 1px 40px);
+  transform:perspective(900px) rotateX(65deg) translateY(-200px);
+  opacity:.4;
+  pointer-events:none;
+}
+
+/* ===== HERO ===== */
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  perspective:2000px;
+}
+
+/* ===== 3D CORE CARD ===== */
+.hero-card{
+  position:relative;
+  max-width:900px;
+  width:90%;
+  padding:80px 70px;
+  border-radius:30px;
+  background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.02));
+  backdrop-filter:blur(30px);
+  box-shadow:0 60px 160px rgba(0,0,0,.85);
+  transform-style:preserve-3d;
+  animation:float 6s ease-in-out infinite;
+  transition:transform .12s ease-out;
+}
+
+/* ===== FLOATING ANIMATION ===== */
+@keyframes float{
+  0%{transform:translateY(0px) rotateX(0deg);}
+  50%{transform:translateY(-18px) rotateX(3deg);}
+  100%{transform:translateY(0px) rotateX(0deg);}
+}
+
+/* ===== GLOW FRAME ===== */
+.glow{
+  position:absolute;
+  inset:-8px;
+  border-radius:34px;
+  background:linear-gradient(120deg,var(--neon),var(--neon2),var(--neon));
+  filter:blur(35px);
+  opacity:.45;
+  z-index:-1;
+}
+
+/* ===== NAME GLITCH ===== */
+.glitch{
+  font-size:3.6rem;
+  font-weight:800;
+  background:linear-gradient(90deg,var(--neon),var(--neon2));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  position:relative;
+}
+
+.glitch::before,
+.glitch::after{
+  content:attr(data-text);
+  position:absolute;
+  left:0;
+  width:100%;
+}
+
+.glitch::before{
+  color:var(--neon);
+  animation:glitch1 2s infinite linear;
+}
+
+.glitch::after{
+  color:var(--neon2);
+  animation:glitch2 1.5s infinite linear;
+}
+
+@keyframes glitch1{
+  0%{clip-path:inset(0 0 90% 0);}
+  50%{clip-path:inset(0 0 10% 0);}
+  100%{clip-path:inset(0 0 90% 0);}
+}
+
+@keyframes glitch2{
+  0%{clip-path:inset(90% 0 0 0);}
+  50%{clip-path:inset(10% 0 0 0);}
+  100%{clip-path:inset(90% 0 0 0);}
+}
+
+.hero-card h2{
+  margin-top:16px;
+  font-weight:400;
+  opacity:.9;
+}
+
+.hero-card p{
+  margin-top:30px;
+  font-size:1.08rem;
+  line-height:1.9;
+  color:#d6d6ec;
+}
+
+/* ===== SECTIONS ===== */
+section{
+  padding:110px 8%;
+}
+
+.section-title{
+  font-size:2.4rem;
+  margin-bottom:50px;
+  background:linear-gradient(90deg,var(--neon),var(--neon2));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* ===== CARDS ===== */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:35px;
+}
+
+.card{
+  background:var(--glass);
+  border-radius:20px;
+  padding:35px;
+  backdrop-filter:blur(16px);
+  box-shadow:0 35px 90px rgba(0,0,0,.65);
+  transition:.35s;
+}
+
+.card:hover{
+  transform:translateY(-18px) scale(1.05);
+  box-shadow:0 60px 140px rgba(0,0,0,.85);
+}
+
+.card h3{
+  color:var(--neon);
+  margin-bottom:16px;
+}
+
+.card p,.card li{
+  font-size:.96rem;
+  line-height:1.7;
+}
+
+footer{
+  text-align:center;
+  padding:45px;
+  opacity:.6;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:600px){
+  .glitch{font-size:2.4rem;}
+  .hero-card{padding:50px 40px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-card" id="card">
+    <div class="glow"></div>
+    <h1 class="glitch" data-text="Benifer Ramola C B">Benifer Ramola C B</h1>
+    <h2>Prefinal Year Student • Cyber Security (Honours) Mepco Schelenk Engineering college,Sivakasi</h2>
+    <p>
+      Passionate cyber security learner with hands-on exposure to defensive
+      security tools, cloud technologies, and cyber awareness platforms.
+      Currently pursuing an international certification in AWS and continuously
+      strengthening real-world cyber security skills.
+    </p>
+  </div>
+</div>
+
+<!-- PROFILE -->
+<section>
+<h2 class="section-title">Profile & Expertise</h2>
+
+<div class="grid">
+  <div class="card">
+    <h3>Education</h3>
+    <p>Prefinal year undergraduate student with Honours in Cyber Security.</p>
+  </div>
+
+  <div class="card">
+    <h3>Security Tools</h3>
+    <ul>
+      <li>Snort – Intrusion Detection System</li>
+      <li>Suricata – Network Security Monitoring</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Learning Platforms</h3>
+    <ul>
+      <li>AWS – International Certification (Ongoing)</li>
+      <li>TryHackMe – Cyber Security Fundamentals</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Certifications & Knowledge</h3>
+    <ul>
+      <li>Infosys Springboard – java foundation, cyber security, </li>
+      <li>Dark Web Awareness & Analysis (Certified)</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<footer>
+© 2025 Benifer Ramola C B • Cyber Security Portfolio
+</footer>
+
+<!-- ===== ADVANCED 3D MOUSE EFFECT ===== -->
+<script>
+const card=document.getElementById('card');
+
+document.addEventListener('mousemove',e=>{
+  const x=(window.innerWidth/2-e.pageX)/18;
+  const y=(window.innerHeight/2-e.pageY)/18;
+  card.style.transform=`rotateY(${x}deg) rotateX(${y}deg)`;
+});
+
+document.addEventListener('mouseleave',()=>{
+  card.style.transform='rotateY(0deg) rotateX(0deg)';
+});
+</script>
+
+</body>
+</html>
